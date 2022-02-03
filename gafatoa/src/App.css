@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .App{
   font-size: 2em;
@@ -20,4 +20,12 @@
 
 .partieDroite{
   text-align: center;
+} */
+
+.App{
+  text-align: center;
+}
+
+.read{
+  width: 80%;
 }

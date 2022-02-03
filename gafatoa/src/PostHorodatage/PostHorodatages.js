@@ -12,11 +12,13 @@ export default class PostHorodatages extends Component  {
         this.handleCheckInDate = this.handleCheckInDate.bind(this);
         this.handleCheckOutDate = this.handleCheckOutDate.bind(this);
         this.handleChangeUser = this.handleChangeUser.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             users: [],
             checkInDate: null,
             checkOutDate: null,
-            user:null
+            user:"",
+            IdUser: 0
         };
     }
 
@@ -27,15 +29,19 @@ export default class PostHorodatages extends Component  {
 
     handleCheckInDate(e) {
         this.setState({ checkInDate: e });
+        // console.log(this.state)
     };
 
     handleChangeUser(e) {
         console.log(e)
-        this.setState({ user: e });
+        console.log(e.target.value)
+        this.setState({ IdUser: e.target.value.split(' ')[0] });
+        console.log(this.state)
     };
 
     handleCheckOutDate(e) {
         this.setState({ checkOutDate: e });
+        // console.log(this.state)
     };
 
     retrieveUsers() {
@@ -43,7 +49,7 @@ export default class PostHorodatages extends Component  {
     fetch("https://localhost:7023/Users")
         .then(res => res.text())
         .then(res => {
-            console.log(res)
+            // console.log(res)
             this.setState({  users: JSON.parse(res) })
         });
     }
@@ -51,48 +57,41 @@ export default class PostHorodatages extends Component  {
     handleSubmit(e) {
         e.preventDefault();
         console.log(e)
-        // const { checkInDate,  checkOutDate} = this.state;
+        const { users, checkInDate,  checkOutDate, IdUser} = this.state;
+        console.log(checkInDate)
+        console.log(checkOutDate)
+        console.log(IdUser)
 
-         console.log(e)
-        // let horodatage : {
-        //     {
-        //     "idHorodatage": 0,
-        //     "idUser": e.idUser,
-        //     "user": {
-        //         "idUser": 0,
-        //         "nom": "string",
-        //         "prenom": "string",
-        //         "poste": "string",
-        //         "email": "string"
-        //     },
-        //     "dateArrival": "2022-02-02T15:45:43.337Z",
-        //     "dateDeparture": "2022-02-02T15:45:43.337Z"
-        //     }
-        // }
+        let horodatage = {
+            "idUser": this.state.idUser,
+            "dateArrival": checkInDate,
+            "dateDeparture": checkOutDate
+        }
 
-        // const requestOptions = {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(user)
-        // };
-
-        // return fetch(`https://localhost:7023/HorodatageUsers`, requestOptions).then(handleResponse);
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(horodatage)
+        };
+        console.log(requestOptions)
+        return fetch(`https://localhost:7023/HorodatageUsers`, requestOptions);
         
     }
 
     render() {
-    const { users, checkInDate,  checkOutDate} = this.state;
+    const { users, checkInDate,  checkOutDate, user} = this.state;
     
         return (
-                <div className="App">
+                <div className="">
                 <form name="form" onSubmit={this.handleSubmit}>
-                    <div className="input-container">
-                        {users && users.map((user, index) => (
-                            <select key={index}>
-                                <option>{user.prenom}</option>
-                            </select>
-                        ))
-                        }
+                    <div className="">
+                        <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="form-select" aria-label="Default select example">
+                            <option>""</option>
+                            {users && users.map((user, index) => (                              
+                                    <option key={index} value={user.IdUser}>{user.idUser} {user.nom} {user.prenom}</option>                           
+                            ))
+                            }
+                        </select>
                         <div>
                             <label>Check-in</label>
                             <DatePicker

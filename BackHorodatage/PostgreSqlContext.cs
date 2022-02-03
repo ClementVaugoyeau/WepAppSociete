@@ -23,5 +23,7 @@ namespace BackHorodatage
         }
 
         public DbSet<User> users { get; set; }
+
+        public DbSet<BackHorodatage.Models.HorodatageUser> horodatages { get; set; }
     }
 }

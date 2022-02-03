@@ -91,17 +91,17 @@ export default function Read() {
     //   )
 
     return(
-        <div>
-            <div>
-                <table>
-                    <thead className='partieDroite'>
-                        <table>
+        // <div>
+            <div className="read">
+                <table className="table-responsive table-bordered m-2">
+                    <thead className="table-responsive m-2"> 
+                        <tr>                
                             <td>IdUser</td>
                             <td>Nom</td>
                             <td>Prenom</td>
                             <td>Poste</td>
                             <td>Email</td>
-                        </table>
+                        </tr>
                     </thead>
                     <tbody>
                         {APIData &&
@@ -118,6 +118,6 @@ export default function Read() {
                     </tbody>
                 </table>
             </div>
-        </div>
+        // </div>
     )
 }
