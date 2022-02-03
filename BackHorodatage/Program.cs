@@ -2,7 +2,9 @@ using BackHorodatage;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var McOrigins = "_myAllowSpecificOrigins";
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 // Add services to the container.
 
 builder.Services.AddControllers();

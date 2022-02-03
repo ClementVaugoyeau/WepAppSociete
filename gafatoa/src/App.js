@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-
-import Create from './Create'
 import Read from './Read'
 import Update from './Update'
 import PostHorodatages from './PostHorodatage/PostHorodatages'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LoginPage from './Login/LoginPage';
 
 function App() {
 
@@ -21,10 +20,10 @@ function App() {
 
           <div className='route'>
             <Routes>
-              <Route exact path='/create' element={<Create />} />
+              <Route exact path='/' element={<LoginPage />} />
               <Route exact path='/read' element={<Read />} />
               <Route exact path='/update' element={<Update/>} />
-              <Route exact path='/' element={<PostHorodatages/>} />
+              <Route exact path='/create' element={<PostHorodatages/>} />
             </Routes>
           </div>
       </div>
