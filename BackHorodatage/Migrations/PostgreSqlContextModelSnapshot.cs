@@ -30,11 +30,11 @@ namespace BackHorodatage.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdHorodatage"));
 
-                    b.Property<DateTime?>("DateArrival")
-                        .HasColumnType("timestamp");
+                    b.Property<DateTime>("DateArrival")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime?>("DateDeparture")
-                        .HasColumnType("timestamp");
+                    b.Property<DateTime>("DateDeparture")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("IdUser")
                         .HasColumnType("integer");

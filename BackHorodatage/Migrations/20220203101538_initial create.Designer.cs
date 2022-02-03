@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackHorodatage.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20220202140543_initiale create")]
-    partial class initialecreate
+    [Migration("20220203101538_initial create")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,11 +32,11 @@ namespace BackHorodatage.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdHorodatage"));
 
-                    b.Property<DateTime?>("DateArrival")
-                        .HasColumnType("timestamp");
+                    b.Property<DateTime>("DateArrival")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime?>("DateDeparture")
-                        .HasColumnType("timestamp");
+                    b.Property<DateTime>("DateDeparture")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("IdUser")
                         .HasColumnType("integer");

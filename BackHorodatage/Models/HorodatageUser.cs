@@ -23,10 +23,10 @@ namespace BackHorodatage.Models
         public User? User { get; set; }
 
 
-        [Column(TypeName = "timestamp with timezone")]
+        [Column(TypeName = "timestamp with time zone")]
         public DateTime DateArrival { get; set; }
 
-        [Column(TypeName = "timestamp with timezone")]
+        [Column(TypeName = "timestamp with time zone")]
         public DateTime DateDeparture { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BackHorodatage.Migrations
 {
-    public partial class initialecreate : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,8 +39,8 @@ namespace BackHorodatage.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IdUser = table.Column<int>(type: "integer", nullable: false),
                     UserIdUser = table.Column<int>(type: "integer", nullable: true),
-                    DateArrival = table.Column<DateTime>(type: "timestamp", nullable: true),
-                    DateDeparture = table.Column<DateTime>(type: "timestamp", nullable: true)
+                    DateArrival = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DateDeparture = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {

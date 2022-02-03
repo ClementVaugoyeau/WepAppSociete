@@ -28,7 +28,9 @@ export default class PostHorodatages extends Component  {
 
 
     handleCheckInDate(e) {
-        this.setState({ checkInDate: e });
+        console.log(e)
+        console.log(e.target.value)
+        this.setState({ checkInDate: e.target.value });
         // console.log(this.state)
     };
 
@@ -40,7 +42,9 @@ export default class PostHorodatages extends Component  {
     };
 
     handleCheckOutDate(e) {
-        this.setState({ checkOutDate: e });
+        e.preventDefault();
+        console.log(e)
+        this.setState({ checkOutDate: e.target.value });
         // console.log(this.state)
     };
 
@@ -61,11 +65,14 @@ export default class PostHorodatages extends Component  {
         console.log(checkInDate)
         console.log(checkOutDate)
         console.log(IdUser)
-
+        // var parsedDateIn = Date.parse(checkInDate);
+        // var parsedDateOut = Date.parse(checkOutDate);
+        var parsedDateIn = new Date(checkInDate);
+        var parsedDateOut = new Date(checkOutDate);
         let horodatage = {
             "idUser": this.state.IdUser,
-            "dateArrival": checkInDate,
-            "dateDeparture": checkOutDate
+            "dateArrival": parsedDateIn,
+            "dateDeparture": parsedDateOut
         }
 
         const requestOptions = {
@@ -93,21 +100,21 @@ export default class PostHorodatages extends Component  {
                             }
                         </select>
                         <div>
-                            <label>Check-in</label>
-                            <DatePicker
-                                selected={checkInDate}
-                                minDate={new Date()}
-                                onChange={this.handleCheckInDate}
-                            />
+                            <label htmlFor="start">Heure d'arrivée :</label>
+                            <input type="datetime-local" id="depart" name="depart" onChange={this.handleCheckInDate}></input>                         
                         </div>
                         <div>
+                            <label htmlFor="start">Heure de départ :</label>
+                            <input type="datetime-local" id="arrivee" name="arrivee" onChange={this.handleCheckOutDate}></input>
+                        </div>   
+                        {/* <div>
                             <label>Check-out</label>
                             <DatePicker
                                 selected={checkOutDate}
                                 minDate={checkInDate}
                                 onChange={this.handleCheckOutDate}
                             />
-                        </div>
+                        </div> */}
                     </div>
                     {/* {checkInDate && checkOutDate && (
                         <div className="summary">
