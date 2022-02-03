@@ -92,7 +92,7 @@ export default function Read() {
 
     return(
         // <div>
-            <div className="read">
+            <div className="container field shadow">
                 <table className="table-responsive table-bordered m-2">
                     <thead className="table-responsive m-2"> 
                         <tr>                

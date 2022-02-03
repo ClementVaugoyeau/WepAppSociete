@@ -83,42 +83,36 @@ export default class PostHorodatages extends Component  {
     const { users, checkInDate,  checkOutDate, user} = this.state;
     
         return (
-                <div className="container">
-                <form name="form" onSubmit={this.handleSubmit}>
-                    <div className="">
-                        <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="form-select" aria-label="Default select example">
-                            <option>""</option>
-                            {users && users.map((user, index) => (                              
-                                    <option key={index} value={user.IdUser}>{user.idUser} {user.nom} {user.prenom}</option>                           
-                            ))
-                            }
-                        </select>
-                        <div>
-                            <label>Check-in</label>
-                            <DatePicker
-                                selected={checkInDate}
-                                minDate={new Date()}
-                                onChange={this.handleCheckInDate}
-                            />
+                <div className="container field shadow">
+                    <form name="form" className='form' onSubmit={this.handleSubmit}>
+                        <div className='form'>
+                            <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="flex-column padding-bot" aria-label="Default select example">
+                                <option>""</option>
+                                {users && users.map((user, index) => (                              
+                                        <option key={index} value={user.IdUser}>{user.idUser} {user.nom} {user.prenom}</option>                           
+                                ))
+                                }
+                            </select>
+                            <div className='form-group flex-column padding-bot'>
+                                <label htmlFor="start">Heure d'arrivée :</label>
+                                <input type="datetime-local" id="depart" name="depart" onChange={this.handleCheckInDate}></input>
+                            </div>
+                            <div className='form-group flex-column padding-bot'>
+                                <label htmlFor="start">Heure de départ :</label>
+                                <input type="datetime-local" id="arrivee" name="arrivee" onChange={this.handleCheckOutDate}></input>
+                            </div>
                         </div>
-                        <div>
-                            <label>Check-out</label>
-                            <DatePicker
-                                selected={checkOutDate}
-                                minDate={checkInDate}
-                                onChange={this.handleCheckOutDate}
-                            />
+                        {/* {checkInDate && checkOutDate && (
+                            <div className="summary">
+                            <p>
+                                You book a hotel from {moment(checkInDate).format("LL")} to{" "}
+                                {moment(checkOutDate).format("LL")}.
+                            </p>
+                            </div>
+                        )} */}
+                        <div className='btn-container'>
+                            <button className="btn btn-primary">Enregistrer</button>
                         </div>
-                    </div>
-                    {/* {checkInDate && checkOutDate && (
-                        <div className="summary">
-                        <p>
-                            You book a hotel from {moment(checkInDate).format("LL")} to{" "}
-                            {moment(checkOutDate).format("LL")}.
-                        </p>
-                        </div>
-                    )} */}
-                    <button className="btn btn-primary">Enregistrer</button>
                     </form>
                 </div>
         );

@@ -3,6 +3,7 @@ import './App.css';
 import Read from './Read'
 import Update from './Update'
 import PostHorodatages from './PostHorodatage/PostHorodatages'
+import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LoginPage from './Login/LoginPage';
 
@@ -15,6 +16,9 @@ function App() {
               <h1>
                 Gafatoa
               </h1>
+              <button className='btn btn-primary'>
+                <Link to="/" className="btn">Login</Link>
+              </button>
             </nav>
           </header>
 
