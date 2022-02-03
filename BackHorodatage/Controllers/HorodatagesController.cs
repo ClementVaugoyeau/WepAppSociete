@@ -37,7 +37,68 @@ namespace BackHorodatage.Controllers
 
             return CreatedAtAction("GetHorodatage", new { id = horodatage.IdHorodatage }, horodatage);
         }
-        // GET: Horodatages/Details/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<HorodatageUser>> GetHorodatageUser(int id)
+        {
+            var horodatageUser = await _context.Horodatages.FindAsync(id);
+
+            if (horodatageUser == null)
+            {
+                return NotFound();
+            }
+
+            return horodatageUser;
+        }
+
+        // PUT: api/OrderMasters/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUser(int id, HorodatageUser horodatageUser)
+        {
+            if (id != horodatageUser.IdHorodatage)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(horodatageUser).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!HorodatageUserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var horodatageUser = await _context.Horodatages.FindAsync(id);
+            if (horodatageUser == null)
+            {
+                return NotFound();
+            }
+
+            _context.Horodatages.Remove(horodatageUser);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool HorodatageUserExists(long id)
+        {
+            return _context.Horodatages.Any(e => e.IdHorodatage == id);
+        }
 
     }
 }
