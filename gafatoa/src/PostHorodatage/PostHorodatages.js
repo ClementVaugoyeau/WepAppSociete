@@ -65,8 +65,6 @@ export default class PostHorodatages extends Component  {
         console.log(checkInDate)
         console.log(checkOutDate)
         console.log(IdUser)
-        // var parsedDateIn = Date.parse(checkInDate);
-        // var parsedDateOut = Date.parse(checkOutDate);
         var parsedDateIn = new Date(checkInDate);
         var parsedDateOut = new Date(checkOutDate);
         let horodatage = {
