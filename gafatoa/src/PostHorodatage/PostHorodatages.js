@@ -63,7 +63,7 @@ export default class PostHorodatages extends Component  {
         console.log(IdUser)
 
         let horodatage = {
-            "idUser": this.state.idUser,
+            "idUser": this.state.IdUser,
             "dateArrival": checkInDate,
             "dateDeparture": checkOutDate
         }
