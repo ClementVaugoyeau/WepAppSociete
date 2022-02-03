@@ -34,14 +34,3 @@ public class User
 
 }
 
-
-//public class UserContext : DbContext
-
-//{
-//    public DbSet<User> users { get; set; }
-
-//    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//    //{
-//    //    optionsBuilder.UseNpgsql(@"Server=localhost;Port=5432;Database=Messagerie;User Id=postgres;Password=root");
-//    //}
-//}

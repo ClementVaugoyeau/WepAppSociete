@@ -28,8 +28,8 @@ export default class LoginPage extends React.Component {
         const { username, password } = this.state;
         if (username && password) {
             let login = {
-                "username": username,
-                "password": password
+                "Pseudo": username,
+                "Password": password
             }
             userService.login(login);
 
