@@ -1,29 +1,47 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.App{
-  font-size: 2em;
-  font-weight: 700;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  background-color: #1f1f1f;
+html{
+  background-color: black;
+}
+
+header{
+  background-color: black;
+  color: crimson;
+  height: 10%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
   align-items: center;
-  color: white;
+  border-bottom: 2px solid white;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+h1{
+  margin: 0;
+  
+}
+
+.App {
   height: 100vh;
+  
+  background-image: url(./image/oeilbg.jpg);
+  background-size: cover;
+  background-position: left;
 }
 
-.create-form label{
-  color: white !important;
-  font-family: 'Montserrat', 'Arial', sans-serif;
+.route{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
 }
 
-.partieDroite{
+.container {
   text-align: center;
-} */
-
-.App{
-  text-align: center;
+  margin: 0;
+  width: 70%;
 }
 
 .read{

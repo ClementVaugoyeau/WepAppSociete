@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./PostHorodatages.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
-import moment from "moment";
+
 
 export default class PostHorodatages extends Component  {
 
@@ -49,7 +49,8 @@ export default class PostHorodatages extends Component  {
     fetch("https://localhost:7023/Users")
         .then(res => res.text())
         .then(res => {
-            // console.log(res)
+           
+            
             this.setState({  users: JSON.parse(res) })
         });
     }
@@ -82,7 +83,7 @@ export default class PostHorodatages extends Component  {
     const { users, checkInDate,  checkOutDate, user} = this.state;
     
         return (
-                <div className="">
+                <div className="container">
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className="">
                         <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="form-select" aria-label="Default select example">

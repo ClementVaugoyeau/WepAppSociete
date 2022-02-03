@@ -11,15 +11,22 @@ function App() {
 
   return (
       <div className="App">
-          <h1>
-              Gafatoa
-          </h1>
-          <Routes>
-            <Route exact path='/create' element={<Create />} />
-            <Route exact path='/read' element={<Read />} />
-            <Route exact path='/update' element={<Update/>} />
-            <Route exact path='/' element={<PostHorodatages/>} />
-          </Routes>
+          <header>
+            <nav>
+              <h1>
+                Gafatoa
+              </h1>
+            </nav>
+          </header>
+
+          <div className='route'>
+            <Routes>
+              <Route exact path='/create' element={<Create />} />
+              <Route exact path='/read' element={<Read />} />
+              <Route exact path='/update' element={<Update/>} />
+              <Route exact path='/' element={<PostHorodatages/>} />
+            </Routes>
+          </div>
       </div>
   );
 }
