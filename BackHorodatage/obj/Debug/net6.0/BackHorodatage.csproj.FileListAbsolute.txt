@@ -530,3 +530,6 @@ C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\obj\Debug\net6.0\BackHorodata
 C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\obj\Debug\net6.0\ref\BackHorodatage.dll
 C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\obj\Debug\net6.0\BackHorodatage.pdb
 C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\obj\Debug\net6.0\BackHorodatage.genruntimeconfig.cache
+C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\bin\Debug\net6.0\System.Web.Http.dll
+C:\Simplon\Repo C NET\WepAppSociete\BackHorodatage\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
