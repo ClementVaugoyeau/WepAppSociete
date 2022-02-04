@@ -17,6 +17,11 @@ export default function Nav() {
                     </Link>
                 </button>
 
+                <button className="btn btn-nav">
+                    <Link to='/readhoro' className="btn btn-nav">
+                        Horo Table
+                    </Link>
+                </button>
 
               </div>
 
