@@ -30,71 +30,17 @@ export default function Read() {
              })
     }
 
-    // retrieveUsers() {
-    
-    //     fetch("https://localhost:7023/Users")
-    //         .then(res => res.text())
-    //         .then(res => this.setState({ apiResponse: res }));
-
-
-    //     this.setState({
-    //         users: UserDataService.getAll()
-    //     });
-
-    //     // UserDataService.getAll()
-    //     // .then(response => {
-    //     //     this.setState({
-    //     //     users: response
-    //     //     });
-    //     // })
-    //     // .catch(e => {
-    //     //     console.log(e);
-    //     // });
-    // }
-
     const onDelete = (ID) => {
         axios.delete(`https://61fa55d392093f0017ad972d.mockapi.io/User/${ID}`)
         .then( () => {getData()})
     }
 
-    // const TableExamplePagination = () => (
-    //     <table>
-    //         <thead className='partieDroite'>
-    //             <table>
-    //                 <td>Prénom</td>
-    //                 <td>Nom</td>
-    //                 <td>Indentifiant</td>
-    //                 <td>Update</td>
-    //                 <td>Supprimer</td>
-    //             </table>
-    //         </thead>
-      
-    //         <tbody>
-    //             {APIData.map( (data) => {return(
-    //                 <tr>
-    //                     <td>{data.FirstName}</td>
-    //                     <td>{data.LastName}</td>
-    //                     <td>{data.UserID}</td>
-    //                     <Link to={'/update'}>
-    //                         <td>
-    //                             <button primary onClick={ () => setData(data)}>Allez</button>
-    //                         </td>
-    //                     </Link>
-    //                     <td>
-    //                         <button secondary onClick={ () => onDelete(data.id)}>Adieux</button>
-    //                     </td>
-    //                 </tr>
-    //             )} ) }
-    //         </tbody>
-
-    //     </table>
-    //   )
 
     return(
         // <div>
-            <div className="read">
-                <table className="table-responsive table-bordered m-2">
-                    <thead className="table-responsive m-2"> 
+            <div className="container field shadow">
+                <table className="">
+                    <thead className=""> 
                         <tr>                
                             <td>IdUser</td>
                             <td>Nom</td>

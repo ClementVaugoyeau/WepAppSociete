@@ -1,31 +1,137 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.App{
-  font-size: 2em;
-  font-weight: 700;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  background-color: #1f1f1f;
+html{
+  background-color: black;
+}
+
+header{
+  background-color: black;
+  color: crimson;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid white;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+h1{
+  margin: 0;
+  
+}
+
+nav{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App {
+  height: 100vh;
+  
+  background-image: url(./image/oeilbg.jpg);
+  background-size: cover;
+  background-position: left;
+}
+
+.route{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+  margin: 0;
+  width: 70%;
+}
+
+.field{
+  background-color: white;
+  min-height: 60%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.shadow{
+  box-shadow: 5px 5px 10px black;
+}
+
+form{
+  min-height: 150px;
+  min-width: 250Px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.btn{
+  font-size: 1.2rem;
+}
+
+.btn-primary{
   color: white;
-  height: 100vh;
+  background-color: crimson;
+  border: none;
+  border-radius: 4px;
+  min-height: 30px;
+  min-width: 80px;
 }
 
-.create-form label{
-  color: white !important;
-  font-family: 'Montserrat', 'Arial', sans-serif;
+.btn-link:visited{
+  color: black;
 }
 
-.partieDroite{
-  text-align: center;
-} */
-
-.App{
-  text-align: center;
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
 }
 
-.read{
-  width: 80%;
+.form-group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  min-width: 70%;
+}
+
+td{
+  padding: 5px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+thead td{
+  padding: 5px;
+  border: 1px solid crimson;
+  border-collapse: collapse;
+  background-color: black;
+  color: crimson;
+  font-weight: 700;
+}
+
+select{
+  width: 100%;
+}
+
+.padding-bot{
+  padding-bottom: 10px;
 }

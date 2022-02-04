@@ -87,21 +87,21 @@ export default class PostHorodatages extends Component  {
     const { users, checkInDate,  checkOutDate, user} = this.state;
     
         return (
-                <div className="">
-                <form name="form" onSubmit={this.handleSubmit}>
-                    <div className="">
-                        <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="form-select" aria-label="Default select example">
+                <div className="container field shadow">
+                <form name="form" className='form' onSubmit={this.handleSubmit}>
+                    <div className="form">
+                        <select value={this.state.idUser} name="user" onChange={this.handleChangeUser} className="flex-column padding-bot" aria-label="Default select example">
                             <option>""</option>
                             {users && users.map((user, index) => (                              
                                     <option key={index} value={user.IdUser}>{user.idUser} {user.nom} {user.prenom}</option>                           
                             ))
                             }
                         </select>
-                        <div>
+                        <div className='form-group flex-column padding-bot'>
                             <label htmlFor="start">Heure d'arrivée :</label>
                             <input type="datetime-local" id="depart" name="depart" onChange={this.handleCheckInDate}></input>                         
                         </div>
-                        <div>
+                        <div className='form-group flex-column padding-bot'>
                             <label htmlFor="start">Heure de départ :</label>
                             <input type="datetime-local" id="arrivee" name="arrivee" onChange={this.handleCheckOutDate}></input>
                         </div>   
@@ -122,7 +122,9 @@ export default class PostHorodatages extends Component  {
                         </p>
                         </div>
                     )} */}
-                    <button className="btn btn-primary">Enregistrer</button>
+                    <div className='btn-container'>
+                            <button className="btn btn-primary">Enregistrer</button>
+                    </div>
                     </form>
                 </div>
         );

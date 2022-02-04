@@ -10,10 +10,7 @@ function login(login) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "pseudo": "Van",
-            "password": "baba"
-            })
+        body: JSON.stringify(login)
     };
 
     console.log(login)
