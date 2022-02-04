@@ -11,7 +11,7 @@ export default function Read() {
         .then( (response) => {
             setAPIData(response.data)
         } )
-    }, [])
+    })
 
     const setData = (data) => {
         let { id, UserID, FirstName, LastName, InOutDate } = data;

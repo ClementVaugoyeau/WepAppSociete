@@ -8,9 +8,20 @@ import PostHorodatages from './PostHorodatage/PostHorodatages'
 import LoginPage  from './LoginPage/LoginPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+var user = null ;
+var userId = 0 ;
 
 function App() {
-  
+  //  useEffect(() => {
+  //       user = JSON.parse(localStorage.getItem("user"));
+  //       console.log(user)
+  //       console.log(user["idUser"])
+  //       if (user != null){
+  //         userId = user["idUser"];
+  //       }
+  //       console.log(userId !== 0)
+  //   })
+
   const logOut = () => {
     localStorage.removeItem("user"); 
   }
