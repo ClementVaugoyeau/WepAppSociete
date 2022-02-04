@@ -2,7 +2,7 @@ using BackHorodatage;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -15,8 +15,23 @@ builder.Services.AddDbContext<PostgreSqlContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DevConnectionPostGreSQL"));
 });
 
-var app = builder.Build();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+      builder =>
+      {
+          builder.WithOrigins("http://localhost:3000",
+                              "*")
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+      });
+});
 
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseCors(MyAllowSpecificOrigins);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
