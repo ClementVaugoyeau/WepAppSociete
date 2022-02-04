@@ -7,11 +7,11 @@ export default function Read() {
     const [APIData, setAPIData] = useState([])
 
     useEffect(() => {
-        axios.get('https://61fa55d392093f0017ad972d.mockapi.io/User')
+        axios.get('https://localhost:7023/Users')
         .then( (response) => {
             setAPIData(response.data)
         } )
-    }, [])
+    })
 
     const setData = (data) => {
         let { id, UserID, FirstName, LastName, InOutDate } = data;
@@ -23,55 +23,51 @@ export default function Read() {
     }
 
     const getData = () => {
-        axios.get(`https://61fa55d392093f0017ad972d.mockapi.io/User`)
+        axios.get(`https://localhost:7023/Users`)
             .then((getData) => {
                  setAPIData(getData.data)
              })
     }
 
     const onDelete = (ID) => {
-        axios.delete(`https://61fa55d392093f0017ad972d.mockapi.io/User/${ID}`)
+       
+        axios.delete(`https://localhost:7023/Users/${ID}`)
         .then( () => {getData()})
     }
 
-    const TableExamplePagination = () => (
-        <table>
-            <thead className='partieDroite'>
-                <table>
-                    <td>Prénom</td>
-                    <td>Nom</td>
-                    <td>Indentifiant</td>
-                    <td>Update</td>
-                    <td>Supprimer</td>
-                </table>
-            </thead>
-      
-            <tbody>
-                {APIData.map( (data) => {return(
-                    <tr>
-                        <td>{data.FirstName}</td>
-                        <td>{data.LastName}</td>
-                        <td>{data.UserID}</td>
-                        <Link to={'/update'}>
-                            <td>
-                                <button primary onClick={ () => setData(data)}>Allez</button>
-                            </td>
-                        </Link>
-                        <td>
-                            <button secondary onClick={ () => onDelete(data.id)}>Adieux</button>
-                        </td>
-                    </tr>
-                )} ) }
-            </tbody>
-
-        </table>
-      )
 
     return(
-        <div>
-            <div>
-                {TableExamplePagination()}
+        // <div>
+            <div className="container field shadow">
+                <table className="">
+                    <thead className=""> 
+                        <tr>                
+                            <td>IdUser</td>
+                            <td>Nom</td>
+                            <td>Prenom</td>
+                            <td>Poste</td>
+                            <td>Email</td>
+                            <td>Options</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {APIData &&
+                            APIData.map((user, index) => (
+                            <tr  key={index}>
+                                <td>{user.idUser}</td>
+                                <td>{user.nom}</td>
+                                <td>{user.prenom}</td>
+                                <td>{user.poste}</td>
+                                <td>{user.email}</td>
+                                <td> <button type="button" className ='btn btn-primary' onClick={() =>onDelete(user.idUser)}>
+                                    Supprimer 
+                                    </button>
+                                </td>                            
+                            </tr>
+                            ))}
+                    </tbody>
+                </table>
             </div>
-        </div>
+        // </div>
     )
 }
