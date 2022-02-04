@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Simplon\\Repo C NET\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj": {}
+    "C:\\Users\\Apprenant\\Desktop\\Code\\Projet\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj": {}
   },
   "projects": {
-    "C:\\Simplon\\Repo C NET\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj": {
+    "C:\\Users\\Apprenant\\Desktop\\Code\\Projet\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Simplon\\Repo C NET\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj",
+        "projectUniqueName": "C:\\Users\\Apprenant\\Desktop\\Code\\Projet\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj",
         "projectName": "BackHorodatage",
-        "projectPath": "C:\\Simplon\\Repo C NET\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj",
-        "packagesPath": "C:\\Users\\vryou\\.nuget\\packages\\",
-        "outputPath": "C:\\Simplon\\Repo C NET\\WepAppSociete\\BackHorodatage\\obj\\",
+        "projectPath": "C:\\Users\\Apprenant\\Desktop\\Code\\Projet\\WepAppSociete\\BackHorodatage\\BackHorodatage.csproj",
+        "packagesPath": "C:\\Users\\Apprenant\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Apprenant\\Desktop\\Code\\Projet\\WepAppSociete\\BackHorodatage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vryou\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Apprenant\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -70,7 +70,7 @@ namespace BackHorodatage.Migrations
 
                     b.HasIndex("UserIdUser");
 
-                    b.ToTable("Login");
+                    b.ToTable("login");
                 });
 
             modelBuilder.Entity("BackHorodatage.Models.User", b =>

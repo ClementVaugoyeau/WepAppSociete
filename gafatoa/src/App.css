@@ -18,6 +18,8 @@ header{
 
 h1{
   margin: 0;
+  position: relative;
+  bottom: 4px;
   
 }
 
@@ -28,6 +30,12 @@ nav{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+nav > div{
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
 }
 
 .App {
@@ -93,8 +101,18 @@ form{
   color: black;
 }
 
+.btn-nav{
+  background-color: black;
+  border: none;
+  color: crimson;
+}
+
+#Login{
+  justify-self: flex-end;
+}
+
 a:link, a:visited {
-  color: white;
+  color: none;
   text-decoration: none;
 }
 
