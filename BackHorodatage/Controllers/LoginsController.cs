@@ -55,7 +55,7 @@ namespace BackHorodatage.Controllers
             Console.WriteLine(mylogin.Password);
 
             var monLogin = _context.login
-            .FromSqlRaw("SELECT * FROM \"Login\" where \"Pseudo\" = {0} and \"Password\" = {1}", mylogin.Pseudo, mylogin.Password)
+            .FromSqlRaw("SELECT * FROM \"login\" where \"Pseudo\" = {0} and \"Password\" = {1}", mylogin.Pseudo, mylogin.Password)
             .FirstOrDefault();
 
         

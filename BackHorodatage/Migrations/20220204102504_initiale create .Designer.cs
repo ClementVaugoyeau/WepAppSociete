@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackHorodatage.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20220203142322_ajout login")]
-    partial class ajoutlogin
+    [Migration("20220204102504_initiale create ")]
+    partial class initialecreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace BackHorodatage.Migrations
 
                     b.HasIndex("UserIdUser");
 
-                    b.ToTable("Login");
+                    b.ToTable("login");
                 });
 
             modelBuilder.Entity("BackHorodatage.Models.User", b =>
@@ -93,6 +93,10 @@ namespace BackHorodatage.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Prenom")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("IdUser");

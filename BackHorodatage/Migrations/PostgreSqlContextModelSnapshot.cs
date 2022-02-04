@@ -70,7 +70,7 @@ namespace BackHorodatage.Migrations
 
                     b.HasIndex("UserIdUser");
 
-                    b.ToTable("Login");
+                    b.ToTable("login");
                 });
 
             modelBuilder.Entity("BackHorodatage.Models.User", b =>
@@ -91,6 +91,10 @@ namespace BackHorodatage.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Prenom")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("IdUser");

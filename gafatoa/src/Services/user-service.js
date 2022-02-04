@@ -14,17 +14,13 @@ function login(login) {
     };
 
     console.log(login)
-    fetch(`${apiUrl}/Logins/login`, requestOptions)
+    return fetch(`${apiUrl}/Logins/login`, requestOptions)
     .then(res => res.text())
         .then(res => {
-            console.log(res)
-            localStorage.setItem('user', res)
+            if (res){
+                localStorage.setItem('user', res)
+                return res
+            }
+            
         });
-        // .then(user => {
-        //     console.log(user.text())
-        //     // store user details and jwt token in local storage to keep user logged in between page refreshes
-        //     localStorage.setItem('user', JSON.stringify(user));
-
-        //     return user;
-        // });
 }

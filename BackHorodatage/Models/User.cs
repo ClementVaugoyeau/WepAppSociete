@@ -31,6 +31,8 @@ public class User
         [Column(TypeName = "varchar(100)")]
         public string? Email { get; set; }
 
+        [Column(TypeName = "varchar(100)")]
+        public string Role { get; set; }
 
 }
 
