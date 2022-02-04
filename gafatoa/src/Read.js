@@ -7,7 +7,6 @@ export default function Read() {
     const [APIData, setAPIData] = useState([])
 
     useEffect(() => {
-        // axios.get('https://61fa55d392093f0017ad972d.mockapi.io/User')
         axios.get('https://localhost:7023/Users')
         .then( (response) => {
             setAPIData(response.data)
@@ -24,14 +23,15 @@ export default function Read() {
     }
 
     const getData = () => {
-        axios.get(`https://61fa55d392093f0017ad972d.mockapi.io/User`)
+        axios.get(`https://localhost:7023/Users`)
             .then((getData) => {
                  setAPIData(getData.data)
              })
     }
 
     const onDelete = (ID) => {
-        axios.delete(`https://61fa55d392093f0017ad972d.mockapi.io/User/${ID}`)
+       
+        axios.delete(`https://localhost:7023/Users/${ID}`)
         .then( () => {getData()})
     }
 
@@ -47,6 +47,7 @@ export default function Read() {
                             <td>Prenom</td>
                             <td>Poste</td>
                             <td>Email</td>
+                            <td>Options</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +59,10 @@ export default function Read() {
                                 <td>{user.prenom}</td>
                                 <td>{user.poste}</td>
                                 <td>{user.email}</td>
-                                {/* <td><Link to={`/users/${user.id}`}> Edit </Link></td> */}
+                                <td> <button type="button" className ='btn btn-primary' onClick={() =>onDelete(user.idUser)}>
+                                    Supprimer 
+                                    </button>
+                                </td>                            
                             </tr>
                             ))}
                     </tbody>

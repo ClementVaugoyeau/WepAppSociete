@@ -18,8 +18,8 @@ namespace BackHorodatage.Models
         [Key]
         public int IdLogin { get; set; }
 
+        public int IdUser { get; set; }
         public User? User { get; set; }
-
 
         public string? Pseudo { get; set; }
 

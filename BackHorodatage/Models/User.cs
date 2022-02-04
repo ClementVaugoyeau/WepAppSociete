@@ -34,5 +34,10 @@ public class User
         [Column(TypeName = "varchar(100)")]
         public string Role { get; set; }
 
+        public User()
+        {
+
+        }
+
 }
 

@@ -80,6 +80,12 @@ form{
   font-size: 1.2rem;
 }
 
+.btn-nav{
+  background-color: black;
+  border: none;
+  color: crimson;
+}
+
 .btn-primary{
   color: white;
   background-color: crimson;

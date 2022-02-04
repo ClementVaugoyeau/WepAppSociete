@@ -23,11 +23,11 @@ export default function LoginPage() {
             userService.login(login)
             .then(
                 user => { 
-                    console.log(user)
-                    if (user != undefined) {
+                    if (user["idUser"] != 0) {
                        navigate("/create") 
                     }else{
-                       alert("Utilisateur non reconnu") 
+                       alert("Utilisateur non reconnu")
+                       localStorage.removeItem("user"); 
                     }                   
                 },
                 error => {

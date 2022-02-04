@@ -28,24 +28,16 @@ export default class PostHorodatages extends Component  {
 
 
     handleCheckInDate(e) {
-        console.log(e)
-        console.log(e.target.value)
         this.setState({ checkInDate: e.target.value });
-        // console.log(this.state)
     };
 
     handleChangeUser(e) {
-        console.log(e)
-        console.log(e.target.value)
         this.setState({ IdUser: e.target.value.split(' ')[0] });
-        console.log(this.state)
     };
 
     handleCheckOutDate(e) {
         e.preventDefault();
-        console.log(e)
         this.setState({ checkOutDate: e.target.value });
-        // console.log(this.state)
     };
 
     retrieveUsers() {
@@ -53,18 +45,13 @@ export default class PostHorodatages extends Component  {
     fetch("https://localhost:7023/Users")
         .then(res => res.text())
         .then(res => {
-            // console.log(res)
             this.setState({  users: JSON.parse(res) })
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(e)
         const { users, checkInDate,  checkOutDate, IdUser} = this.state;
-        console.log(checkInDate)
-        console.log(checkOutDate)
-        console.log(IdUser)
         var parsedDateIn = new Date(checkInDate);
         var parsedDateOut = new Date(checkOutDate);
         let horodatage = {
@@ -78,13 +65,21 @@ export default class PostHorodatages extends Component  {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(horodatage)
         };
-        console.log(requestOptions)
-        return fetch(`https://localhost:7023/HorodatageUsers`, requestOptions);
+        
+        return fetch(`https://localhost:7023/HorodatageUsers`, requestOptions).then(res => res.text())
+        .then(res => {
+            if (JSON.parse(res)["idHorodatage"]){   
+                alert("Pointage effectué")
+            }else{
+                alert("Pointage non enregistré en base")
+            }
+            
+        });
         
     }
 
     render() {
-    const { users, checkInDate,  checkOutDate, user} = this.state;
+    const { users, checkInDate,  checkOutDate, IdUser} = this.state;
     
         return (
                 <div className="container field shadow">
@@ -123,7 +118,8 @@ export default class PostHorodatages extends Component  {
                         </div>
                     )} */}
                     <div className='btn-container'>
-                            <button className="btn btn-primary">Enregistrer</button>
+                        {IdUser != 0 && <button className="btn btn-primary">Enregistrer</button>}
+                        {IdUser == 0 && <span>Choisissez un utilisateur</span>}
                     </div>
                     </form>
                 </div>

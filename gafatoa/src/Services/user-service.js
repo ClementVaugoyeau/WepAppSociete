@@ -13,13 +13,12 @@ function login(login) {
         body: JSON.stringify(login)
     };
 
-    console.log(login)
     return fetch(`${apiUrl}/Logins/login`, requestOptions)
     .then(res => res.text())
         .then(res => {
             if (res){
                 localStorage.setItem('user', res)
-                return res
+                return JSON.parse(res)
             }
             
         });

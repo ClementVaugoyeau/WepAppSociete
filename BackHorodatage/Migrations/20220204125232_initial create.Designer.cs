@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackHorodatage.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20220204102504_initiale create ")]
-    partial class initialecreate
+    [Migration("20220204125232_initial create")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,6 +58,9 @@ namespace BackHorodatage.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdLogin"));
+
+                    b.Property<int>("IdUser")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Password")
                         .HasColumnType("text");

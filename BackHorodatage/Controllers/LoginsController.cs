@@ -40,7 +40,7 @@ namespace BackHorodatage.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<Login> GetUserByPrenom(Login mylogin)
+        public async Task<ActionResult<User>> GetUserByPrenom(Login mylogin)
         {
             //var query = from st in _context.login
             //            where st.Pseudo == mylogin.Pseudo
@@ -57,9 +57,22 @@ namespace BackHorodatage.Controllers
             var monLogin = _context.login
             .FromSqlRaw("SELECT * FROM \"login\" where \"Pseudo\" = {0} and \"Password\" = {1}", mylogin.Pseudo, mylogin.Password)
             .FirstOrDefault();
+            User user = new User();
 
-        
-            return monLogin;
+            if (monLogin != null)
+            {
+                Console.WriteLine("sdsqdqsd " + monLogin.IdUser);
+                user = await _context.users.FindAsync(monLogin.IdUser);
+
+                if (user.Nom == null)
+                {
+                    return NotFound();
+                }
+
+                
+            }
+
+            return user;
         }
 
     }
